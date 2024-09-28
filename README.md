@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning Project with Modern Technologies
 
-## Getting Started
+This project was developed with the aim of improving skills and exploring modern technologies. It uses updated libraries, such as **Shadcn** and **Sanity**, with **React** as the main framework and **Tailwind CSS** for styling. The focus of the project is to provide a solid foundation for learning and continued development.
 
-First, run the development server:
+> This project uses **npm** as the package manager, not **yarn** or others.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commit Convention
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Commit Type                       | Emoji                     |
+|----------------------------------- |---------------------------|
+| **Initial commit**                | 🎉 `:tada:`               |
+| **Version tag**                   | 🔖 `:bookmark:`           |
+| **New feature**                   | ✨ `:sparkles:`            |
+| **Task list (ideas)**             | 🔜 `:soon:`               |
+| **Bugfix**                        | 🐛 `:bug:`                |
+| **Documentation**                 | 📚 `:books:`              |
+| **Tests**                         | 🧪 `:test_tube:`          |
+| **Adding a test**                 | ✅ `:white_check_mark:`    |
+| **Approval tests**                | ✔️ `:heavy_check_mark:`   |
+| **Accessibility**                 | ♿ `:wheelchair:`          |
+| **Text**                          | 📝 `:pencil:`             |
+| **Package.json in JS**            | 📦 `:package:`            |
+| **In progress**                   | 🚧 `:construction:`       |
+| **Configuration files**           | 🔧 `:wrench:`             |
+| **Removing a dependency**         | ➖ `:heavy_minus_sign:`    |
+| **Adding a dependency**           | ➕ `:heavy_plus_sign:`     |
+| **Reverting changes**             | 💥 `:boom:`               |
+| **Code review changes**           | 👌 `:ok_hand:`            |
+| **Refactoring**                   | ♻️ `:recycle:`            |
+| **Moving/Renaming**               | 🚚 `:truck:`              |
