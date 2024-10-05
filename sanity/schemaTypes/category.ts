@@ -20,6 +20,12 @@ export default defineType({
         maxLength: 96,
       },
       validation: (Rule) => Rule.required()
+    },
+    {
+      name: 'icon',
+      title: 'Icone',
+      type: 'image',
+      validation: (Rule) => Rule.required()
     }
   ]
 });
