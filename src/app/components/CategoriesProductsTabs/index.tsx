@@ -5,6 +5,13 @@ import { Button } from '@/src/components/ui/button';
 import { getAllCategories } from '@/src/app/queries/categories/getAllCategories';
 import Image from 'next/image';
 import { Separator } from '@/src/components/ui/separator';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/src/components/ui/carousel';
 
 interface Category {
   _id: string;
@@ -38,31 +45,49 @@ export default function CategorySelector() {
         </p>
       </div>
       <Separator className="w-full" />
-      <div className="grid grid-cols-8 gap-5">
-        {categories.map((category) => (
-          <div className="flex flex-col items-center justify-center gap-2">
-            <Button
-              key={category._id}
-              variant="outline"
-              className={`w-28 h-28 rounded-full p-0 flex flex-col items-center justify-center ${
-                selectedCategory === category._id
-                  ? 'border-2 border-blue-500'
-                  : ''
-              }`}
-              onClick={() => setSelectedCategory(category._id)}
-            >
-              <Image
-                src={category.icon.asset.url}
-                width={1920}
-                height={720}
-                alt={category.title}
-                className="w-full h-full rounded-full"
-              />
-            </Button>
-            <span className="text-xs">{category.title}</span>
-          </div>
-        ))}
-      </div>
+      <Carousel
+        opts={{
+          align: 'start',
+          loop: true,
+          slidesToScroll: 8,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="flex gap-4 pl-5">
+          {categories.map((category) => (
+            <CarouselItem key={category._id} className="basis-1/8 p-0">
+              <div className="flex flex-col items-center justify-center gap-2">
+                <Button
+                  variant="outline"
+                  className={`w-24 h-24 md:w-24 md:h-24 rounded-full p-0 flex flex-col items-center justify-center ${
+                    selectedCategory === category._id
+                      ? 'border-2 border-blue-500'
+                      : ''
+                  }`}
+                  onClick={() => setSelectedCategory(category._id)}
+                >
+                  <Image
+                    src={category.icon.asset.url}
+                    width={96}
+                    height={96}
+                    alt={category.title}
+                    className="w-full h-full rounded-full object-contain"
+                  />
+                </Button>
+                <span className="text-xs text-center w-24">
+                  {category.title}
+                </span>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          className={`${categories.length > 8 ? 'block' : 'hidden'}`}
+        />
+        <CarouselNext
+          className={`${categories.length > 8 ? 'block' : 'hidden'}`}
+        />
+      </Carousel>
     </div>
   );
 }
