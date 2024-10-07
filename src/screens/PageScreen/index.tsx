@@ -5,14 +5,21 @@ import { getAllProducts } from '@/src/app/queries';
 import { getFeaturedProducts } from '@/src/app/queries/products/featuredProducts';
 import ProductsCards from '@/src/app/components/ProductsCards';
 
-export default function PageScreen() {
+export default async function PageScreen() {
+  const allProducts = await getAllProducts();
+  const featuredProducts = await getFeaturedProducts();
+
   return (
     <Navbar>
       <CarouselComponent />
       <div className="flex flex-col gap-10">
-        <ProductsCards query={getFeaturedProducts} carousel={true} />
+        <ProductsCards
+          products={featuredProducts}
+          carousel={true}
+          isFeatured={true}
+        />
         <CategorySelector />
-        <ProductsCards query={getAllProducts} />
+        <ProductsCards products={allProducts} limit={4} />
       </div>
     </Navbar>
   );

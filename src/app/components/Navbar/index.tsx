@@ -2,6 +2,7 @@ import { Input } from '@/src/components/ui/input';
 import { Separator } from '@/src/components/ui/separator';
 import { BadgePercent, PinIcon, TruckIcon } from 'lucide-react';
 import Footer from '../Footer';
+import Link from 'next/link';
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -45,7 +46,7 @@ export default function Navbar({ children }: NavbarProps) {
               alt="KG Store Logo"
             />
             <h1 className="w-full text-2xl font-bold">
-              {EcommerceInformation.name}
+              <Link href="/">{EcommerceInformation.name}</Link>
             </h1>
           </div>
           <div className="w-4/6">
@@ -54,7 +55,7 @@ export default function Navbar({ children }: NavbarProps) {
         </div>
         <Separator />
       </nav>
-      <div className="w-full flex flex-col items-center justify-center mt-48">
+      <div className="w-full flex flex-col items-center justify-center mt-40">
         <div className="w-full max-w-7xl flex flex-col pb-10">{children}</div>
         <Footer />
       </div>
